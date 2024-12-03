@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Bookstore</title>
+
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+
     <style>
         .hero {
             height:650px;
@@ -31,6 +38,7 @@
 
         .hero p{
             font-size: 20px;
+            font-weight:500;
         }
 
         .contents .button{
@@ -51,7 +59,7 @@
         <div class="contents">
             <h1>Books for Every Story Seeker</h1>
             <p>From timeless classics to today's bestsellers, find it all in one place</p>
-            <a href="books.php" class="button btn btn-primary">Explore Books</a>
+            <a href="pages/books.php" class="button btn btn-primary">Explore Books</a>
 
         </div>
     </section>

@@ -2,7 +2,7 @@
     <div class="container d-flex justify-content-between align-items-center">
         <h1>Online Bookstore</h1>
         <nav>
-            <a href="index.php" class="text-white mx-2">Home</a>
+            <a href="/bookstore/index.php" class="text-white mx-2">Home</a>
             <a href="categories.php" class="text-white mx-2">Categories</a>
             <a href="cart.php" class="text-white mx-2">Cart</a>
             <a href="login.php" class="text-white mx-2">Login</a>
