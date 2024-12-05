@@ -17,7 +17,7 @@ $featuredBooks = $conn->query($featuredQuery)->fetch_all(MYSQLI_ASSOC);
                         <div class="card-body">
                             <h5 class="card-title"><?php echo htmlspecialchars($book['title']); ?></h5>
                             <p class="card-text">$<?php echo number_format($book['price'], 2); ?></p>
-                            <a href="book.php?id=<?php echo $book['id']; ?>" class="btn btn-primary">View Details</a>
+                            <a href="/bookstore/pages/book.php?id=<?php echo $book['id']; ?>" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
