@@ -38,6 +38,48 @@ body{
    background-color: var(--hovered-color);
 }
 
+.btn-secondary{
+   background-color: var(--secodnary-color);
+}
+
+
+/* cards section */
+
+.card{
+   height: 34rem;
+   width: 18rem;
+}
+
+.card img {
+   height: 60%;
+   width: 80%;
+   object-fit: fill;
+   margin: 0 auto;
+}
+
+.card-body{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.btn-cta{
+   border: 1px var(--accent-color);
+   color: var(--accent-color);
+}
+.card:hover{
+   cursor: pointer;
+   .btn-cta{
+      background-color:var(--accent-color);
+      color: white;
+   }
+}
+
+
+
+
+/* footer section  */
+
 .footer{
     background-color: #2C3E50;
  }
