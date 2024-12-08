@@ -6,7 +6,7 @@ $categoriesQuery = "SELECT * FROM categories";
 $categories = $conn->query($categoriesQuery)->fetch_all(MYSQLI_ASSOC);
 ?>
 
-<section class="container my-5">
+<section class="container my-5" id="categories">
     <h2 class="text-center mb-4">Browse by Category</h2>
     <div class="row">
         <?php if (!empty($categories)): ?>

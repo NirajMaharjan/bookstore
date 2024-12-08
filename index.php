@@ -15,6 +15,7 @@
 
 
     <style>
+
         .hero {
             height:650px;
             background: url('assets/images/hero.jpg') no-repeat center center/cover;
@@ -39,23 +40,25 @@
         }
 
         .hero p{
-            font-size: 20px;
+            font-size: 18px;
             font-weight:500;
         }
 
         .contents .button{
             font-size: 20px;
             width:10rem;
-            background: #E67E22;
             color:black;
+            border: none;
+            width: fit-content
             
         }
+        
 
     </style>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
-
+        
     <!-- Hero Section -->
     <section class="hero">
         <div class="contents">

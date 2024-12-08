@@ -18,6 +18,30 @@ $books = $conn->query($booksQuery)->fetch_all(MYSQLI_ASSOC);
 
 // Calculate total pages
 $totalPages = ceil($totalBooks / $limit);
+
+
+//for search function
+
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = $conn->real_escape_string($_GET['search']);
+    $limit = 10; // Set your desired limit
+    $offset = 0; // Adjust based on pagination logic if applicable
+
+    $booksQuery = "SELECT * FROM books WHERE title LIKE '%$search%' OR author LIKE '%$search%' LIMIT $limit OFFSET $offset";
+    $result = $conn->query($booksQuery);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<p>" . $row['title'] . " by " . $row['author'] . "</p>";
+        }
+    } else {
+        echo "<p>No results found.</p>";
+    }
+} else {
+    echo "<p>Please enter a search term.</p>";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +51,7 @@ $totalPages = ceil($totalBooks / $limit);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Catalog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         .card img {
             height: 200px;
