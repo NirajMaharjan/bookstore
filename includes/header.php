@@ -75,7 +75,7 @@ if (isset($_GET['search'])) {
   </div>
   <!-- Categories Filter -->
 <div class="container my-4">
-    <form action="books.php" method="GET" class="d-flex">
+    <form action="category.php" method="GET" class="d-flex">
         <select name="category" class="form-select me-2">
             <option value="">All Categories</option>
             <?php while ($category = $categoriesResult->fetch_assoc()): ?>
@@ -88,9 +88,9 @@ if (isset($_GET['search'])) {
     </form>
    
     <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="pages/logout.php" class="btn btn-danger">Logout</a>
+        <a href="/bookstore/pages/logout.php" class="btn btn-danger">Logout</a>
     <?php else: ?>
-        <a href="pages/login.php" class="btn btn-primary">Login</a>
+        <a href="/bookstore/pages/login.php" class="btn btn-primary">Login</a>
     <?php endif; ?>
 
 </div>

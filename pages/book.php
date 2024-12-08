@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config/db.php';
 
 // Get the book ID from the URL
@@ -48,11 +49,14 @@ if ($bookResult && $bookResult->num_rows > 0) {
                 <h1><?php echo htmlspecialchars($book['title']); ?></h1>
                 <h4 class="text-muted">by <?php echo htmlspecialchars($book['author']); ?></h4>
                 <p class="text-secondary"><?php echo htmlspecialchars($book['description']); ?></p>
-                <h3 class="text-success">$<?php echo number_format($book['price'], 2); ?></h3>
-                <form action="cart.php" method="POST">
-                    <input type="hidden" name="book_id" value="<?php echo $book['id']; ?>">
-                    <button type="submit" class="btn btn-primary btn-lg mt-3">Add to Cart</button>
+                <h3 class="text-success">Rs<?php echo number_format($book['price'], 2); ?></h3>
+                
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product_id" value="<?php echo $book['id']; ?>">
+                    <input type="hidden" name="action" value="add">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
                 </form>
+
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config/db.php';
 
 // Set up pagination variables
@@ -48,7 +49,7 @@ $totalPages = ceil($totalBooks / $limit);
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($book['title']); ?></h5>
                                 <p class="text-muted"><?php echo htmlspecialchars($book['author']); ?></p>
-                                <p class="card-text">$<?php echo number_format($book['price'], 2); ?></p>
+                                <p class="card-text">Rs<?php echo number_format($book['price'], 2); ?></p>
                                 <a href="book.php?id=<?php echo $book['id']; ?>" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
