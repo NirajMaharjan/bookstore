@@ -1,4 +1,4 @@
-<!-- footer section starts  -->
+<!-- footer section starts 
 
 <section class="footer">
 
@@ -42,7 +42,7 @@
 
 </section>
 
-<!-- footer section ends -->
+footer section ends -->
 
 
 
@@ -52,11 +52,40 @@
 
 
 
-<!-- swiper js link  -->
+<!-- swiper js link 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
+custom js file link  -->
+<!-- <script src="js/script.js"></script>
 
 </body>
-</html>
+</html> -->
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your trusted online bookstore for the best collections of books from various genres. Read, learn, and grow with us!</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="pages/about.php">About Us</a></li>
+                <li><a href="pages/cart.php">Cart</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: maharjanniraj87@gmail.com</p>
+            <p>Phone: +977 9860558990</p>
+            <p>Address: Khichapokhari, Kathmandu, Nepal</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; Created By <span>Niraj Maharjan</span>. All rights reserved.</p>
+    </div>
+</footer>

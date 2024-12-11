@@ -2,14 +2,13 @@
 // Fetch categories
 include $_SERVER['DOCUMENT_ROOT'] . '/bookstore/config/db.php';
 
-
 ?>
 
 
 <header style="background-color:#2C3E50" class="text-white py-3 px-5">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Online Bookstore</h1>
-    <form method="GET" action="books.php" class="d-flex" role="search">
+    <form method="GET" action="pages/books.php" class="d-flex" role="search">
         <input class="form-control me-2" name='search' type="search" placeholder="Search for books.." aria-label="Search">
        
       </form>
@@ -18,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/bookstore/config/db.php';
       <a href="/bookstore/pages/aboutus.php" class="text-white text-decoration-none">About Us</a>
       <a href="index.php#categories" class="text-white text-decoration-none">Categories</a>
    
-      <a href="cart.php"><img src="/bookstore/assets/images/cart.png" alt="cart"></a>
+      <a href="/bookstore/pages/cart.php"><img src="/bookstore/assets/images/cart.png" alt="cart"></a>
       
       <?php if (isset($_SESSION['user_id'])): ?>
         <a href="/bookstore/pages/logout.php" class="btn btn-danger">Log Out</a>
