@@ -49,24 +49,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php include '../includes/header.php'; ?>
 
-    <div class="container my-5">
-        <h1>Login</h1>
-        <?php if ($error): ?>
+    <div class="login-container">
+    <form method="POST" action="login.php" class="login-box">
+            <h2>Login</h2>
+            <?php if ($error): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
         <?php endif; ?>
-        <form method="POST" action="login.php">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" id="email" class="form-control" required>
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn-login">Login</button>
+            <p class="signup-text">Don't have an account? <a href="register.php">Sign up here</a></p>
         </form>
-        <p class="mt-3">Don't have an account? <a href="register.php">Register here</a>.</p>
     </div>
+
+    
 
     <?php include '../includes/footer.php'; ?>
 </body>

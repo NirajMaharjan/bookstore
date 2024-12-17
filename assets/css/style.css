@@ -240,3 +240,101 @@ body{
    background-color: #ddd;
    cursor: not-allowed;
 }
+
+
+
+
+/* login */
+/* General Reset */
+
+
+/* Container for Login Box */
+.login-container {
+   margin: 5rem auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+/* Login Box */
+.login-box {
+   background-color: #fff;
+   padding: 30px;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   width: 350px;
+   text-align: center;
+}
+
+/* Heading */
+.login-box h2 {
+   margin-bottom: 20px;
+   color: var(--main-color);
+   font-size: 24px;
+}
+
+/* Input Groups */
+.input-group {
+   margin-bottom: 15px;
+   text-align: left;
+}
+
+.input-group label {
+   display: block;
+   font-size: 14px;
+   color: #555;
+   margin-bottom: 5px;
+}
+
+.input-group input {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 14px;
+}
+
+.input-group input:focus {
+   border-color: #28a745; 
+   outline: none;
+}
+
+/* Login Button */
+.btn-login {
+   display: inline-block;
+   width: 100%;
+   background-color: var(--accent-color); /* Replace with your primary color */
+   color: #fff;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+   font-weight: bold;
+   margin-top: 10px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+
+.btn-login:hover {
+   background-color: var(--hovered-color); /* Slightly darker shade for hover effect */
+}
+
+/* Signup Text */
+.signup-text {
+   margin-top: 15px;
+   font-size: 14px;
+   color: #555;
+}
+
+.signup-text a {
+   color: var(--accent-color); /* Primary color for link */
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.signup-text a:hover {
+   text-decoration: underline;
+}
+   

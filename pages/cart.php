@@ -86,9 +86,9 @@ $result = $stmt->get_result();
 
 <div class="cart-container">
     <div class="cart-item">
-        <img src="https://via.placeholder.com/60" alt="Product Image">
-        <div class="item-name">Product Name</div>
-        <div class="item-price">$99.99</div>
+    <img src="../<?php echo $row['image_url']; ?>" width="50">
+        <div class="item-name"><?php echo $row['title']; ?></div>
+        <div class="item-price">Rs <?php echo $row['price']; ?></div>
         <div class="cart-quantity">
             <button onclick="changeQuantity(-1)">-</button>
             <input type="text" class="quantity" value="1" readonly>
@@ -124,12 +124,7 @@ $result = $stmt->get_result();
         <?php endwhile; ?>
     </table>
 
-    <div class="row">
-    <img src="../<?php echo $row['image_url']; ?>" width="50">
-    <?php echo $row['title']; ?>
-    Rs <?php echo $row['price']; ?>
-
-    </div>
+   
 
     <div class="checkout_section">
 
@@ -141,6 +136,24 @@ $result = $stmt->get_result();
         <?php endif; ?>
     </div>
     <?php include '../includes/footer.php'; ?>
+
+
+    <!--script for quantity button  -->
+    <script>
+    function changeQuantity(amount) {
+        const quantityInput = event.target.parentNode.querySelector('.quantity');
+        let currentQuantity = parseInt(quantityInput.value, 10);
+        let newQuantity = currentQuantity + amount;
+        if (newQuantity >= 1) {
+            quantityInput.value = newQuantity;
+        }
+    }
+
+    function removeItem(element) {
+        const cartItem = element.closest('.cart-item');
+        cartItem.remove();
+    }
+</script>
 </body>
 
 </html>
