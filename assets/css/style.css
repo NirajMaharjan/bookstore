@@ -203,11 +203,13 @@ body{
 }
 
 .cart-item .delete-icon {
-   flex: 0.5;
+   width:2rem;
    font-size: 20px;
    color: #E67E22;
    cursor: pointer;
    text-align: center;
+   border: none;
+   background: none;
 }
 
 .cart-item .delete-icon:hover {

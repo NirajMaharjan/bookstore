@@ -63,33 +63,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php include '../includes/header.php'; ?>
 
-    <div class="container my-5">
-        <h1>Register</h1>
+    <div class="login-container">
         <?php if ($error): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
-        <?php elseif ($success): ?>
-            <div class="alert alert-success"><?php echo $success; ?></div>
-        <?php endif; ?>
-        <form method="POST" action="register.php">
-            <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" name="name" id="name" class="form-control" required>
+            <?php elseif ($success): ?>
+                <div class="alert alert-success"><?php echo $success; ?></div>
+                <?php endif; ?>
+                <form method="POST" action="register.php" class="login-box">
+            <h2>Register</h2>
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" id="email" class="form-control" required>
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
             </div>
-            <div class="mb-3">
-                <label for="confirm_password" class="form-label">Confirm Password</label>
-                <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+            <div class="input-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn-login">Register</button>
+            <p class="signup-text">Already have an account? <a href="login.php">Log in here</a>.</p>
         </form>
-        <p class="mt-3">Already have an account? <a href="login.php">Log in here</a>.</p>
     </div>
 
     <?php include '../includes/footer.php'; ?>

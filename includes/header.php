@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/bookstore/config/db.php';
     <nav class="d-flex justify-content-between align-items-center gap-3">
       <a href="/bookstore/index.php" class="text-white text-decoration-none">Home</a>
       <a href="/bookstore/pages/aboutus.php" class="text-white text-decoration-none">About Us</a>
-      <a href="index.php#categories" class="text-white text-decoration-none">Categories</a>
+      <a href="/bookstore/index.php#categories" class="text-white text-decoration-none">Categories</a>
    
       <a href="/bookstore/pages/cart.php"><img src="/bookstore/assets/images/cart.png" alt="cart"></a>
       

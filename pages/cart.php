@@ -56,7 +56,7 @@ $result = $stmt->get_result();
 <html>
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@ $result = $stmt->get_result();
 </head>
 
 <body>
-<?php include '../includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
     <h2>Your Cart</h2>
     <table>
         <tr>
@@ -84,23 +84,33 @@ $result = $stmt->get_result();
 
 
 
-<div class="cart-container">
-    <div class="cart-item">
-    <img src="../<?php echo $row['image_url']; ?>" width="50">
-        <div class="item-name"><?php echo $row['title']; ?></div>
-        <div class="item-price">Rs <?php echo $row['price']; ?></div>
-        <div class="cart-quantity">
-            <button onclick="changeQuantity(-1)">-</button>
-            <input type="text" class="quantity" value="1" readonly>
-            <button onclick="changeQuantity(1)">+</button>
-        </div>
-        <div class="delete-icon" onclick="removeItem(this)">&times;</div>
-    </div>
-</div>
+            <div class="cart-container">
+                <div class="cart-item">
+                    <img src="../<?php echo $row['image_url']; ?>" width="50">
+                    <div class="item-name"><?php echo $row['title']; ?></div>
+                    <div class="item-price">Rs <?php echo $row['price']; ?></div>
+                    <form method="post" action="cart.php">
+                        <div class="cart-quantity">
+                        <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                        <input type="hidden" name="action" value="update">
+                            <button onclick="changeQuantity(-1)">-</button>
+                            <input type="text" class="quantity" value="1" readonly>
+                            <button onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </form>
+                    <form method="post" action="cart.php">
+                        <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                        <input type="hidden" name="action" value="remove">
+                        <button class="delete-icon">&times;</button>
+                        <!-- <div class="delete-icon" onclick="removeItem(this)">&times;</div> -->
+                    </form>
+                </div>
+            </div>
 
 
 
             <tr>
+                
                 <td><img src="../<?php echo $row['image_url']; ?>" width="50"></td>
                 <td><?php echo $row['title']; ?></td>
                 <td>Rs <?php echo $row['price']; ?></td>
@@ -124,7 +134,7 @@ $result = $stmt->get_result();
         <?php endwhile; ?>
     </table>
 
-   
+
 
     <div class="checkout_section">
 
@@ -135,25 +145,25 @@ $result = $stmt->get_result();
             <p>Your cart is empty!</p>
         <?php endif; ?>
     </div>
-    <?php include '../includes/footer.php'; ?>
+    
 
 
     <!--script for quantity button  -->
     <script>
-    function changeQuantity(amount) {
-        const quantityInput = event.target.parentNode.querySelector('.quantity');
-        let currentQuantity = parseInt(quantityInput.value, 10);
-        let newQuantity = currentQuantity + amount;
-        if (newQuantity >= 1) {
-            quantityInput.value = newQuantity;
+        function changeQuantity(amount) {
+            const quantityInput = event.target.parentNode.querySelector('.quantity');
+            let currentQuantity = parseInt(quantityInput.value, 10);
+            let newQuantity = currentQuantity + amount;
+            if (newQuantity >= 1) {
+                quantityInput.value = newQuantity;
+            }
         }
-    }
 
-    function removeItem(element) {
-        const cartItem = element.closest('.cart-item');
-        cartItem.remove();
-    }
-</script>
+        function removeItem(deleteIcon) {
+            
+            deleteIcon.closest('form').submit();
+        }
+    </script>
 </body>
 
 </html>
