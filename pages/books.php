@@ -57,7 +57,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 <body>
     <?php include '../includes/header.php'; ?>
 
-    <div class="container my-5">
+    <div class="container my-5" style="min-height: 70vh;">
         <h1 class="text-center mb-4">Book Catalog</h1>
         <div class="row gx-2">
             <?php if (!empty($books)): ?>
@@ -87,7 +87,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
         </div>
 
         <!-- Pagination -->
-        <nav>
+        <nav id="pagination">
             <?php if ($totalBooks>0): ?>
             <ul class="pagination justify-content-center">
                 <?php if ($page > 1): ?>

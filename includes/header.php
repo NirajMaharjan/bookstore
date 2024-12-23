@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/bookstore/config/db.php';
 <header style="background-color:#2C3E50" class="text-white py-3 px-5">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Online Bookstore</h1>
-    <form method="GET" action="pages/books.php" class="d-flex" role="search">
+    <form method="GET" action="/bookstore/pages/books.php" class="d-flex" role="search">
         <input class="form-control me-2" name='search' type="search" placeholder="Search for books.." aria-label="Search">
        
       </form>

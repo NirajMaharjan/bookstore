@@ -18,8 +18,8 @@
 
         .hero {
             height:650px;
-            background: url('assets/images/hero.jpg') no-repeat center center/cover;
-            color: #2C3E50;
+            background: url('assets/images/hero-try.png') no-repeat center center/cover;
+            color: #D9D9D9;
             text-align: right;
             padding: 50px 20px;
             display:flex;
@@ -61,6 +61,7 @@
         
     <!-- Hero Section -->
     <section class="hero">
+        <!-- <img src="assets/images/hero.jpg" alt="hero"> -->
         <div class="contents">
             <h1>Books for Every Story Seeker</h1>
             <p>From timeless classics to today's bestsellers, find it all in one place</p>

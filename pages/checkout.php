@@ -25,35 +25,72 @@ while ($row = $cart_items->fetch_assoc()) {
 }
 ?>
 
-<h2>Checkout</h2>
-<h3>Order Summary</h3>
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Subtotal</th>
-    </tr>
-    <?php
-    $cart_items->data_seek(0); // Reset the result set pointer
-    while ($row = $cart_items->fetch_assoc()):
-        $subtotal = $row['price'] * $row['quantity'];
-    ?>
-        <tr>
-            <td><?php echo $row['title']; ?></td>
-            <td><?php echo $row['quantity']; ?></td>
-            <td>$<?php echo $row['price']; ?></td>
-            <td>$<?php echo $subtotal; ?></td>
-        </tr>
-    <?php endwhile; ?>
-</table>
-<h3>Total: $<?php echo $total_price; ?></h3>
 
-<form method="post" action="checkout.php">
-    <label for="address">Shipping Address:</label>
-    <textarea name="address" id="address" required></textarea>
-    <button type="submit" name="checkout">Place Order</button>
-</form>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/bookstore/assets/css/style.css">
+</head>
+
+<body>
+    <?php include '../includes/header.php' ?>
+    <div class="checkout-container">
+        <form method="post" action="checkout.php">
+            <h1>Checkout</h1>
+            <div class="form-group">
+
+                <label for="address">Shipping Address:</label>
+                <textarea name="address" id="address" placeholder="Enter your shipping address" rows="4" required></textarea>
+            </div>
+            <div class="order-summary">
+
+                <h2>Order Summary</h2>
+
+
+                <div class="order-details">
+
+
+                    <!-- trial section -->
+                    <?php
+                    $cart_items->data_seek(0); // Reset the result set pointer
+                    while ($row = $cart_items->fetch_assoc()):
+                        $subtotal = $row['price'] * $row['quantity'];
+                    ?>
+
+                        <div class="order-item">
+
+                            <div><?php echo $row['title']; ?></div>
+                            <div><?php echo $row['quantity']; ?></div>
+                            <div><?php echo $row['price']; ?></div>
+                            <div><?php echo $subtotal; ?></div>
+                        </div>
+
+                    <?php endwhile; ?>
+                </div>
+            </div>
+
+
+
+
+            <div class="order-total">
+                <h3>Total: Rs <?php echo $total_price; ?></h3>
+            </div>
+
+
+
+            <button type="submit" class="submit-btn" name="checkout">Place Order</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
 
 
 <?php
