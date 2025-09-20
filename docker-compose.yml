@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: php-app
+    ports:
+      - "8080:80"
+    environment:
+      MYSQLHOST: localhost
+      MYSQLUSER: root
+      MYSQLPASSWORD: 
+      MYSQLDATABASE: bookstore
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: bookstore
