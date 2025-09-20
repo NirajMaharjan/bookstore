@@ -7,9 +7,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN a2enmod rewrite
 
 # Copy project files into Apache document root
-COPY . /var/www/html/
+COPY . /var/www/html/bookstore/
 
 # Set working directory
-WORKDIR /var/www/html/
+WORKDIR /var/www/html/bookstore/
 
 EXPOSE 80
